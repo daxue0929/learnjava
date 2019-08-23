@@ -1,12 +1,24 @@
 package com.daxue.IO;
 
+import org.junit.jupiter.api.Test;
+
 import java.io.File;
 import java.io.IOException;
+import java.util.Properties;
 
 public class FileExample {
     public static void main(String[] args) {
 
-        createFile();
+//        createFile();
+
+
+        File file = new File("C:\\server\\data\\dlpxqjvnavi/168.0.100:15420\\29411188\\tour.xml");
+
+        if (file.exists()) {
+            System.out.println("成功");
+        }
+
+        new FileExample().test003();
     }
 
     private static void createFile() {
@@ -29,5 +41,25 @@ public class FileExample {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void test001(){
+
+        String url = "http://192.168.0.100:15420/29411188/tour.html";
+        String substring = url.substring(0,url.indexOf("tour.html"));
+        
+        System.out.println(substring);
+
+
+    }
+
+    @Test
+    public void test003(){
+        boolean isWin = false;
+        Properties properties = System.getProperties();
+        isWin = properties.getProperty("sun.desktop").indexOf("win") != -1 ? true : false;
+        System.out.println(isWin);
+
     }
 }
