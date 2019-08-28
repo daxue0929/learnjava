@@ -38,6 +38,13 @@ public class SearchStr {
         String os = System.getProperty("os.name");
         System.out.println(os.toLowerCase().startsWith("win"));
     }
+
+    @Test
+    public void test004(){
+
+        
+
+    }
 }
 
 

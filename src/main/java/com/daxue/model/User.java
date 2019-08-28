@@ -1,7 +1,8 @@
 package com.daxue.model;
 
-import java.util.Date;
+import org.springframework.stereotype.Component;
 
+import java.util.Date;
 
 public class User {
 

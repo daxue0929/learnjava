@@ -12,7 +12,8 @@ public class Person {
     public LocalDate birthday;
 
     public static void main(String[] args) {
-
+        Runnable r1 = () -> System.out.println("Hello Lambda");
+        r1.run();
     }
 
 }
