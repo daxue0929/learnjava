@@ -8,6 +8,6 @@
     <!-- spring config -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:configApplication.xml</param-value>
+        <param-value>classpath:</param-value>
     </context-param>
 </web-app>
