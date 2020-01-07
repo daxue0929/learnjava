@@ -1,5 +1,11 @@
 package com.daxue.java8;
 
+
+
+
+
+import org.junit.Test;
+
 import java.util.ArrayList;
 
 public class Java8Tester {
@@ -22,8 +28,11 @@ public class Java8Tester {
         System.out.println("使用java7的语法:");
 
 
-
-
-
     }
+
+    @Test
+    public void test() {
+        System.out.println("das");
+    }
+
 }

@@ -1,8 +1,9 @@
 package com.daxue.str;
 
-import org.junit.jupiter.api.Test;
 
-import java.io.DataInput;
+
+import org.junit.Test;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -102,8 +103,6 @@ public class SearchStr {
 
         System.out.println("--------------");
         System.out.println(new Date().getTime()/1000);
-
-
     }
 }
 
