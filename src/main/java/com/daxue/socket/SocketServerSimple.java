@@ -2,10 +2,11 @@ package com.daxue.socket;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class SocketServer {
+public class SocketServerSimple {
 
 
     public static void main(String[] args) {
@@ -30,4 +31,23 @@ public class SocketServer {
             e.printStackTrace();
         }
     }
+
+    public static void gennerateCharacters(OutputStream out) throws IOException{
+        int fistPrintableCharacter = 33;
+        int numberOfPrintableCharacters = 94;
+        int numberOfCharactersPerLine = 72;
+
+        int start = fistPrintableCharacter;
+        while (true) {
+            for (int i = start; i < numberOfCharactersPerLine; i++) {
+                out.write(((i - fistPrintableCharacter) % numberOfPrintableCharacters) + fistPrintableCharacter);
+
+                out.write('\r'); //回车
+                out.write('\n'); //换行
+                start = ((start + 1) - fistPrintableCharacter) % numberOfPrintableCharacters + fistPrintableCharacter;
+
+            }
+        }
+    }
+
 }

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
 
-public class SocketClient {
+public class SocketClientSimple {
     public static void main(String[] args) {
         // 要连接的服务端IP地址和端口
         String host = "127.0.0.1";
