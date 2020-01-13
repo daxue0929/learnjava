@@ -45,7 +45,5 @@ public class SocketClient {
                 start = ((start - 1) - firstPrintableCharactor) % numberOfPrintableCharacter + firstPrintableCharactor;
             }
         }
-
-
     }
 }
