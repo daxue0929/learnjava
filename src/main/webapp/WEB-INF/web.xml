@@ -3,7 +3,7 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <!--<display-name>Archetype Created Web Application</display-name>-->
 
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>
@@ -44,4 +44,9 @@
 
 
 
+    <!--&lt;!&ndash; spring config &ndash;&gt;-->
+    <!--<context-param>-->
+        <!--<param-name>contextConfigLocation</param-name>-->
+        <!--<param-value>classpath:configApplication.xml</param-value>-->
+    <!--</context-param>-->
 </web-app>
