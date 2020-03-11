@@ -49,8 +49,6 @@ public class XmlTest {
             // 手机号
             // 回执状态
             //
-
-
         } catch (DocumentException e) {
             e.printStackTrace();
         }
