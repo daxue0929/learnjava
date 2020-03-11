@@ -102,7 +102,7 @@ public class SearchStr {
         System.out.println(year);
 
         System.out.println("--------------");
-        System.out.println(new Date().getTime()/1000);
+        System.out.println(System.currentTimeMillis()/1000);
     }
 }
 
