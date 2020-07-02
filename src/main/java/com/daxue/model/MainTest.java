@@ -26,8 +26,8 @@ public class MainTest {
     }
 
     private static void initFromFile() {
-        students.addAll(CsvUtil.readFile(stuPath, Student.class));
-        caurses.addAll(CsvUtil.readFile(cauPath, Caurse.class));
+//        students.addAll(CsvUtil.readFile(stuPath, Student.class));
+//        caurses.addAll(CsvUtil.readFile(cauPath, Caurse.class));
     }
 
     private static void PleaseChoosePattern() {
@@ -154,8 +154,8 @@ public class MainTest {
         System.out.println("请输入1,2,3进入一级菜单,0保存文件");
     }
     public static void writeFile() {
-        CsvUtil.createFile(stuPath,students, Student.class);
-        CsvUtil.createFile(cauPath, caurses, Caurse.class);
+//        CsvUtil.createFile(stuPath,students, Student.class);
+//        CsvUtil.createFile(cauPath, caurses, Caurse.class);
     }
     public static String scan() {
         Scanner cin = new Scanner(System.in);
