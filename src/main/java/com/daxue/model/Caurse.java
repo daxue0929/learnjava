@@ -1,6 +1,6 @@
 package com.daxue.model;
 
-import cn.afterturn.easypoi.excel.annotation.Excel;
+//import cn.afterturn.easypoi.excel.annotation.Excel;
 
 /**
  * @author daxue0929
@@ -8,13 +8,13 @@ import cn.afterturn.easypoi.excel.annotation.Excel;
  **/
 public class Caurse {
 
-    @Excel(name = "id", orderNum = "1")
+//    @Excel(name = "id", orderNum = "1")
     private String id;
 
-    @Excel(name = "name", orderNum = "2")
+//    @Excel(name = "name", orderNum = "2")
     private String name;
 
-    @Excel(name = "credit", orderNum = "3")
+//    @Excel(name = "credit", orderNum = "3")
     private String credit;
 
     public Caurse() {
