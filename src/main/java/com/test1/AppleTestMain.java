@@ -19,6 +19,8 @@ public class AppleTestMain {
         inventory.add(new Apple("green", 300));
         inventory.add(new Apple("red", 600));
         inventory.add(new Apple("green", 500));
-        List<Apple> apples = Apple.filterApples(inventory, Apple::isGreenApple);
+        List<Apple> greenAppleApples = Apple.filterApples(inventory, Apple::isGreenApple);
+        List<Apple> HeavyApples = Apple.filterApples(inventory, Apple::isHeavyApple);
+
     }
 }
