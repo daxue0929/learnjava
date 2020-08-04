@@ -3,9 +3,12 @@ package com.test1;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.util.DigestUtils;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.Date;
 
 public class Test1002 {
+    private final static String ENCODE = "utf-8";
     public static void main(String[] args) {
 
 //        Date date = new Date(new Date().getTime() - 7200000);
@@ -30,8 +33,16 @@ public class Test1002 {
 //        long time = new Date().getTime();
 //        System.out.println(time);
 
-        String s = DigestUtils.md5DigestAsHex("Ydzssdsp123".getBytes()).toLowerCase();
-        System.out.println(s);
+//        String s = DigestUtils.md5DigestAsHex("Ydzssdsp123".getBytes()).toLowerCase();
+//        System.out.println(s);
+
+
+        try {
+            String str = URLEncoder.encode("你好中文", ENCODE);
+            System.out.println(str);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
     }
 
