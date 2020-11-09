@@ -35,7 +35,6 @@ public class NullExpection {
         Thread thread2 = new Thread(firstGroup, "线程2");
         Thread thread3 = new Thread(firstGroup, "线程3");
         Thread thread4 = new Thread(firstGroup, "线程4");
-
         thread.start();
         System.out.println(thread.getId() + ":" + thread.getName());
         System.out.println("活动的线程数：" + thread.getThreadGroup().activeCount());
