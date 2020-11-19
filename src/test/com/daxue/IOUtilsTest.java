@@ -22,4 +22,12 @@ public class IOUtilsTest extends TestCase {
     public void testReadStrFromFileInputStream() {
         instance.readStrFromFileInputStream();
     }
+
+    public void testReadFromStringBufferInputStream() {
+    }
+
+    public void testReadStrFromByteArrayInputStream() {
+        instance.readStrFromByteArrayInputStream();
+
+    }
 }
