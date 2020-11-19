@@ -25,6 +25,21 @@
             <artifactId>lombok</artifactId>
             <version>1.18.10</version>
         </dependency>
+        <dependency>
+            <groupId>cn.afterturn</groupId>
+            <artifactId>easypoi-base</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.afterturn</groupId>
+            <artifactId>easypoi-web</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.afterturn</groupId>
+            <artifactId>easypoi-annotation</artifactId>
+            <version>4.1.0</version>
+        </dependency>
 
 
         <!-- https://mvnrepository.com/artifact/com.google.zxing/core -->
