@@ -20,6 +20,10 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
+/**
+ * 为一个域名生成https证书文件
+ */
+
 public class InstallCert {
 
     /**
