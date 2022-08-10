@@ -1,0 +1,30 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\n  <modelVersion>4.0.0</modelVersion>\n\n  <groupId>learnjava</groupId>\n  <artifactId>learnjava</artifactId>\n  <version>1.0-SNAPSHOT</version>\n  <packaging>war</packaging>\n\n  <name>learnjava</name>\n\n  <properties>\n    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\n    <maven.compiler.source>1.8</maven.compiler.source>\n    <maven.compiler.target>1.8</maven.compiler.target>\n  </properties>\n\n  <dependencies>\n    <dependency>\n      <groupId>junit</groupId>\n      <artifactId>junit</artifactId>\n      <version>4.11</version>\n      <scope>test</scope>\n    </dependency>\n  </dependencies>\n\n  <build>\n    <finalName>learnjava</finalName>\n    <pluginManagement>\n      <plugins>\n        <plugin>\n          <artifactId>maven-clean-plugin</artifactId>\n          <version>3.1.0</version>\n        </plugin>\n        <plugin>\n          <artifactId>maven-resources-plugin</artifactId>\n          <version>3.0.2</version>\n        </plugin>\n        <plugin>\n          <artifactId>maven-compiler-plugin</artifactId>\n          <version>3.8.0</version>\n        </plugin>\n        <plugin>\n          <artifactId>maven-surefire-plugin</artifactId>\n          <version>2.22.1</version>\n        </plugin>\n        <plugin>\n          <artifactId>maven-war-plugin</artifactId>\n          <version>3.2.2</version>\n        </plugin>\n        <plugin>\n          <artifactId>maven-install-plugin</artifactId>\n          <version>2.5.2</version>\n        </plugin>\n        <plugin>\n          <artifactId>maven-deploy-plugin</artifactId>\n          <version>2.8.2</version>\n        </plugin>\n      </plugins>\n    </pluginManagement>\n  </build>\n</project>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pom.xml	(revision 7d157b9b6617207e8d763a926e84e702fe911fb3)
++++ pom.xml	(date 1610102648486)
+@@ -24,6 +24,20 @@
+       <version>4.11</version>
+       <scope>test</scope>
+     </dependency>
++    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
++
++    <dependency>
++      <groupId>org.apache.poi</groupId>
++      <artifactId>poi-ooxml</artifactId>
++      <version>4.1.2</version>
++    </dependency>
++    <dependency>
++      <groupId>com.alibaba</groupId>
++      <artifactId>fastjson</artifactId>
++      <version>1.2.74</version>
++    </dependency>
++
++
+   </dependencies>
+ 
+   <build>

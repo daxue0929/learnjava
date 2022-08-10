@@ -24,9 +24,9 @@ public class AppMain {
 
     public static final String THREE_FOUR_FILE_NAME = BASE_PATH + "/" + "3.4_appList.json";
     public static final String CIG_FILE_NAME = BASE_PATH + "/" + "cig_appList.json";
-    public static final String NEW_FOLDER = BASE_PATH + "/" + "result";
+    public static final String NEW_FOLDER = BASE_PATH + "/" + "result-fish1";
 
-    public static final String FOLDER_NAME = "tn-10541f5dbcfb4f85a58a4e2d2e0f4b31_dump_file";
+    public static final String FOLDER_NAME = "fish-tn-10541f5dbcfb4f85a58a4e2d2e0f4b31_dump_file";
     public static final String PATH = BASE_PATH + "/" + FOLDER_NAME;
 
     public static final String DATA = "data";
