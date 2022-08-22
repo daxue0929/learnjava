@@ -25,12 +25,16 @@
             <artifactId>lombok</artifactId>
             <version>1.18.10</version>
         </dependency>
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.25</version>
             <scope>compile</scope>
         </dependency>
+
+
+
         <dependency>
             <groupId>cn.afterturn</groupId>
             <artifactId>easypoi-base</artifactId>
