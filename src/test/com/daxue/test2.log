@@ -1,0 +1,47 @@
+label_node(){
+    logger info"-----------------------------------------------------"
+    logger info "开始进行节点打标签......"
+    command kubectl >/dev/null 2>&1
+     [ $? -ne 0 ] && cp tools/kubectl /usr/bin/
+    kubectl get no |grep "${work[0]}" >/dev/null 2>&1
+    [ $? -ne 0 ] && logger error "请确认连接的集群是否正确"
+    [ "${INSTALL_postgresql}" = "true" ] && [ -z "$database" ] && echo "请设置数据库节点" && exit 2
+    [ -z "$work" ] && echo "请设置work节点" && exit 2
+    [ -z "$cache" ] && echo "请设置中间件节点" && exit 2
+
+    for (( i=0;i<${#work[*]};i++ ));do
+       kubectl get no ${work[i]} --show-labels |grep 'idaas=true' >/dev/null 2>&1 || kubectl label nodes ${work[i]} idaas=true
+    done
+    if [[ "$INSTALL_MODE" = "standalone" ]];then
+        for (( i=0;i<${#database[*]};i++ ));do
+           kubectl get no ${database[i]} --show-labels |grep 'postgres=true' >/dev/null 2>&1 || kubectl label nodes ${database[i]} postgres=true
+        done
+
+        for (( i=0;i<${#cache[*]};i++ ));do
+           kubectl get nodes ${cache[i]} --show-labels |grep 'redis=true' >/dev/null 2>&1 || kubectl label nodes ${cache[i]} redis=true kafka=true elasticsearch=true rabbitmq=true minio=true zookeeper=true etcd=true
+        done
+    elif [[ "$INSTALL_MODE" = "cluster" ]];then
+        [[ "${#cache[*]}" -ne 3 ]] && logger error "中间件必须使用3个节点..."
+        m=0
+        for (( i=0;i<${#cache[*]};i++ ));do
+            kubectl get no ${cache[i]} --show-labels |grep "etcd"$m"=true" >/dev/null 2>&1||kubectl label nodes ${cache[i]} redis"$m"=true kafka"$m"=true elasticsearch"$m"=true minio"$m"=true zookeeper"$m"=true rabbitmq"$m"=true etcd"$m"=true postgres"$m"=true
+       let m+=1
+       done
+       kubectl get no ${cache[0]} --show-labels |grep 'minio3=true' >/dev/null 2>&1||kubectl label nodes ${cache[0]} minio3=true
+    fi
+    if ! kubectl get ns |grep idaas >/dev/null 2>&1 ;then
+        kubectl create ns idaas >/dev/null 2>&1
+        [ $? -eq 0 ] && logger info "创建名称空间 idaas 成功" || logger error "创建名称空间 idaas 失败"
+    else
+        logger warn "名称空间 idaas 已经存在"
+    fi
+    if ! kubectl get ns |grep monitoring >/dev/null 2>&1;then
+       kubectl create ns monitoring >/dev/null 2>&1
+    fi
+    if ! kubectl get ns |grep sso >/dev/null 2>&1;then
+        kubectl create ns sso >/dev/null 2>&1
+        [ $? -eq 0 ] && logger info "创建名称空间 sso 成功" || logger error "创建名称空间 sso 失败"
+    else
+        logger warn "名称空间 sso 已经存在"
+    fi
+}
